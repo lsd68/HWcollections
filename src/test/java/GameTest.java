@@ -50,6 +50,7 @@ public class GameTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void testWhenFirstPlayerNotExist() {
         Player dima = new Player(1, "Dima", 100);
@@ -59,8 +60,9 @@ public class GameTest {
         game.registered(dima);
         game.registered(diana);
 
-        Assertions.assertThrows(NotRegisteredException.class,() -> game.round("Natasha","Diana"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Natasha", "Diana"));
     }
+
     @Test
     public void testWhenTwoPlayerNotExist() {
         Player dima = new Player(1, "Dima", 100);
@@ -70,8 +72,9 @@ public class GameTest {
         game.registered(dima);
         game.registered(diana);
 
-        Assertions.assertThrows(NotRegisteredException.class,() -> game.round("Dima","Natasha"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Dima", "Natasha"));
     }
+
     @Test
     public void testWhenNoPlayerNotExist() {
         Player dima = new Player(1, "Dima", 100);
@@ -81,6 +84,6 @@ public class GameTest {
         game.registered(dima);
         game.registered(diana);
 
-        Assertions.assertThrows(NotRegisteredException.class,() -> game.round("Lena","Natasha"));
+        Assertions.assertThrows(NotRegisteredException.class, () -> game.round("Lena", "Natasha"));
     }
 }
